@@ -45,7 +45,7 @@ functions:
           path: posts/create
           method: post
           authorizer:
-            name: authorizer
+            name: jwtAuthorizer
             arn: 'Fn::ImportValue': jwtAuthorizerArn
             identitySource: method.request.header.Cookie
             type: request
