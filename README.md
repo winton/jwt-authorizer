@@ -1,6 +1,6 @@
 # jwt-authorizer
 
-JWT API Gateway Lambda Authorizer
+JWT API Gateway Lambda Authorizer 🚥
 
 ## Architecture
 
