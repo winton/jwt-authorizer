@@ -6,4 +6,4 @@ BUMP=${1:-minor}
 
 ./bin/build
 git status
-npx release-it --ci -i $BUMP
+npx release-it --no-npm.publish --ci -i $BUMP
