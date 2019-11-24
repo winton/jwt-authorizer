@@ -1,5 +1,5 @@
 {
-  "name": "@winton/jwt-authorizer",
+  "name": "@fn2/jwt-authorizer",
   "version": "0.1.0",
   "description": "JWT API Gateway Lambda Authorizer 🚥",
   "main": "dist/cjs/index.js",
