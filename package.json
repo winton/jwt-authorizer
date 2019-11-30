@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "JWT API Gateway Lambda Authorizer 🚥",
   "private": true,
-  "main": "dist/cjs/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "./bin/build",
     "deploy": "npm run release && npx sls deploy",
@@ -38,6 +38,7 @@
     "eslint-config-prettier": "6.7.0",
     "eslint-plugin-prettier": "3.1.1",
     "expect": "24.9.0",
+    "fs-extra": "8.1.0",
     "husky": "3.1.0",
     "lint-staged": "9.4.3",
     "mocha": "6.2.2",

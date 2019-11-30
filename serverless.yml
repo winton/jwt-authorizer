@@ -20,7 +20,7 @@ provider:
 
 functions:
   jwtAuthorizer:
-    handler: dist/cjs/index.authorizer
+    handler: dist/index.authorizer
     cors: true
     environment:
       STAGE: ${opt:stage, self:provider.stage}
@@ -29,4 +29,4 @@ resources:
   Outputs:
     JwtAuthorizerLambdaFunctionQualifiedArn:
       Export:
-        Name: jwtAuthorizerArn
+        Name: jwtAuthorizer-${file(serverless.js):version}
