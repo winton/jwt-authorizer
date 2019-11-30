@@ -46,7 +46,8 @@ functions:
           method: post
           authorizer:
             name: jwtAuthorizer
-            arn: 'Fn::ImportValue': jwtAuthorizerArn
+            arn:
+              "Fn::ImportValue": jwtAuthorizer-0-1-0
             identitySource: method.request.header.Cookie
             type: request
 ```
