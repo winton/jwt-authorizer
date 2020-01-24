@@ -20,7 +20,7 @@ provider:
 
 functions:
   jwtAuthorizer:
-    handler: dist/index.authorizer
+    handler: dist/cjs/index.authorizer
     cors: true
     environment:
       STAGE: ${opt:stage, self:provider.stage}
