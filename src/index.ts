@@ -4,10 +4,9 @@ import {
 } from "aws-lambda"
 
 import cookie from "cookie"
-import { verify } from "jsonwebtoken"
+import JwtSsm from "jwt-ssm"
 
 import { generatePolicy } from "./generatePolicy"
-import { getSsmParameter } from "./ssm"
 
 export async function authorizer(
   event: CustomAuthorizerEvent
@@ -22,10 +21,17 @@ export async function authorizer(
     return "Unauthorized"
   }
 
-  const privateKey = await getSsmParameter("privateKey")
+  const decoded = JwtSsm.decode(token)
+
+  if (typeof decoded !== "object") {
+    return "Unauthorized"
+  }
 
   try {
-    const decoded = verify(token, privateKey)
+    JwtSsm.verify(
+      `/jwtPrivateKeys/${decoded["sub"]}`,
+      token
+    )
 
     return generatePolicy(
       decoded["sub"],

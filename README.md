@@ -6,7 +6,7 @@ JWT API Gateway Lambda Authorizer 🚥
 
 This project deploys an [API Gateway Lambda Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) that any Lambda function can use to authenticate requests.
 
-Requests authenticate using a cookied JWT token. [SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) holds the private key used to [encode](src/token.ts) and [authenticate](src/index.ts) the JWT token.
+Requests authenticate using a cookied JWT token. [SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) holds the private key used to create and verify the JWT token.
 
 ## Private key
 
@@ -15,7 +15,7 @@ Requests authenticate using a cookied JWT token. [SSM Parameter Store](https://d
 Rotate or set up a new private key:
 
 ```bash
-npm run rotate
+npm run rotate -- /jwtPrivateKeys/mySubject
 ```
 
 ## JWT token
@@ -23,10 +23,8 @@ npm run rotate
 Generate a new token from the command line:
 
 ```bash
-npm run token -- "token subject"
+npm run token -- /jwtPrivateKeys/mySubject
 ```
-
-See [`token.ts`](src/token.ts) for an example of generating the token programmatically.
 
 ## Cookie
 
