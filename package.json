@@ -47,7 +47,7 @@
     "release-it": "12.4.3",
     "semver": "7.1.1",
     "serverless": "1.61.3",
-    "serverless-offline": "5.12.1",
+    "serverless-offline": "12.0.4",
     "ts-node": "8.6.2",
     "typescript": "3.7.5"
   },
